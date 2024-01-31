@@ -1,5 +1,6 @@
 import 'package:clena_architecture_test/features/daily_news/presentation/bloc/article/remote/remote_article_bloc.dart';
 import 'package:clena_architecture_test/features/daily_news/presentation/bloc/article/remote/remote_article_state.dart';
+import 'package:clena_architecture_test/features/daily_news/presentation/widgets/article_tile.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
@@ -38,8 +39,8 @@ class DailyNews extends StatelessWidget {
         return ListView.builder(
             itemCount: state.articles!.length,
             itemBuilder: (context, index) {
-              return ListTile(
-                title: Text('$index'),
+              return ArticleWidget(
+                article: state.articles![index],
               );
             });
       }
